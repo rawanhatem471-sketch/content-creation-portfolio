@@ -1,10 +1,5 @@
 # Content Creation Portfolio
 
-## Explore My Work
-
-- [Scripts](Scripts.md)
-- [Campaigns](Campaigns/)
-- [Creative Ideas](Creative-Ideas.md)
 
 ## About Me
 
@@ -23,14 +18,14 @@ I’m a creative Content Creator who is passionate about developing ideas, writi
 
 ## My Projects
 
-### 🎬 Campaigns
+### 🎬 [Campaigns](Campaigns/)
 
 A collection of creative advertising campaigns and concepts I have worked on.
 
-### ✍️ Scripts
+### ✍️ [Scripts](Scripts/)
 
 Creative scripts written for social media videos and advertising content.
 
-### 💡 Creative Ideas
+### 💡 [Creative Ideas](Creative-Ideas/)
 
 Creative concepts and ideas developed for different brands and campaigns.
