@@ -1,19 +1,26 @@
 # rawanhatem471-sketch
 ## About Me
 
-I’m a creative Content Creator who is passionate about developing ideas, writing scripts, and creating engaging social media content. I’m obsessed with creating advertisements and turning creative ideas into engaging campaigns that capture people’s attention. I enjoy using storytelling to connect with audiences and bring creative concepts to life.
+I’m a Business Information Systems Student
+Content Creator & Creative Thinker who is passionate about developing ideas, writing scripts, and creating engaging social media content. I’m obsessed with creating advertisements and turning creative ideas into engaging campaigns that capture people’s attention. I enjoy using storytelling to connect with audiences and bring creative concepts to life.
 
 ## Skills
 
 - Content Creation
 - Scriptwriting
 - Creative Concept Development
-- Advertising
-- Social Media Content
-- Campaign Ideas
+- Copywriting
+- Advertising & Campaign Development
 - Storytelling
-- AI-Assisted Content Creation
+- Graphic Design
+- Digital Marketing
 
+
+## Currently Exploring
+
+- UI/UX Design
+- Data Analysis
+  
 ## My Projects
 
 ### 🎬 [Campaigns](Campaigns/)
