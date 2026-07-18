@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rawan Hatem</title>
 </head>
 
 <body>
 
-    <h1>TEST</h1>
+    <div id="readme-content"></div>
 
-    <a href="./campaigns.html">
-        اضغطي هنا لـ Campaigns
-    </a>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        fetch('./README.md')
+            .then(response => response.text())
+            .then(markdown => {
+                document.getElementById('readme-content').innerHTML =
+                    marked.parse(markdown);
+            });
+    </script>
 
 </body>
 </html>
