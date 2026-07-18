@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Creative Idea | Rawan Hatem</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+
+    <div id="content"></div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const file = params.get('file');
+
+        fetch(`Creative_Ideas/${file}`)
+            .then(response => response.text())
+            .then(markdown => {
+                document.getElementById('content').innerHTML =
+                    marked.parse(markdown);
+            })
+            .catch(error => {
+                document.getElementById('content').innerHTML =
+                    '<p>Could not load this creative idea.</p>';
+            });
+    </script>
+
+</body>
+</html>
