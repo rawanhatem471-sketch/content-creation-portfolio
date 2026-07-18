@@ -23,7 +23,7 @@ I’m a Business Information Systems Student
   
 ## My Projects
 
-[🎬 Campaigns](./campaigns.html)
+[🎬 Campaigns](campaigns.html)
 
 A collection of creative advertising campaigns and concepts I have worked on.
 
