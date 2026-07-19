@@ -24,8 +24,6 @@ body {
     padding: 50px 35px 100px;
 }
 
-/* Main title */
-
 h1 {
     font-size: clamp(60px, 12vw, 150px);
     line-height: 0.85;
@@ -35,15 +33,11 @@ h1 {
     font-weight: 900;
 }
 
-/* Subtitle and normal text */
-
 p {
     max-width: 750px;
     font-size: 18px;
     line-height: 1.6;
 }
-
-/* Sections */
 
 h2 {
     margin-top: 100px;
@@ -56,8 +50,6 @@ h3 {
     font-size: 30px;
     margin-top: 50px;
 }
-
-/* Links */
 
 a {
     color: var(--black);
@@ -72,15 +64,16 @@ a:hover {
     border-bottom-color: var(--black);
 }
 
-/* Horizontal lines */
-
 hr {
     border: none;
     border-top: 3px solid var(--black);
     margin: 60px 0;
 }
 
-/* Project list */
+ul {
+    padding: 0;
+    list-style: none;
+}
 
 li {
     list-style: none;
@@ -101,8 +94,6 @@ li:nth-child(even) {
 li:hover {
     transform: rotate(0deg) scale(1.03);
 }
-
-/* Small creative details */
 
 body::before {
     content: "IDEAS / WORDS / ADS";
