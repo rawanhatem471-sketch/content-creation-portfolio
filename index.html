@@ -1,80 +1,80 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>Rawan Hatem | Content Creator</title>
+    <title>Rawan Hatem | Content Creator</title>
 
-<link rel="stylesheet" href="style.css">
-```
+    <link rel="stylesheet" href="style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
-<body>
+<body class="home-page">
 
-```
-<main id="readme-content">
+    <main id="readme-content">
+        Loading...
+    </main>
 
-    <h1>Rawan Hatem</h1>
+    <script>
+        fetch('README.md')
+            .then(response => response.text())
+            .then(markdown => {
 
-    <p>
-        Content Creator & Creative Thinker
-    </p>
+                const content = document.getElementById('readme-content');
 
-    <hr>
+                content.innerHTML = marked.parse(markdown);
 
-    <h2>About Me</h2>
+                // Skills
+                const skillsHeading = [...content.querySelectorAll('h2')]
+                    .find(h2 => h2.textContent.trim() === 'Skills');
 
-    <p>
-        I’m a Business Information Systems Student who is passionate about
-        developing ideas, writing scripts, and creating engaging social media
-        content. obsessed with creating advertisements and turning creative
-        ideas into engaging campaigns that capture people’s attention.
-    </p>
+                if (skillsHeading) {
+                    const skillsList = skillsHeading.nextElementSibling;
 
-    <h2>Skills</h2>
+                    if (skillsList && skillsList.tagName === 'UL') {
+                        skillsList.classList.add('skills-list');
+                    }
+                }
 
-    <ul class="skills-list">
-        <li>Content Creation</li>
-        <li>Scriptwriting</li>
-        <li>Creative Concept Development</li>
-        <li>Copywriting</li>
-        <li>Advertising & Campaign Development</li>
-        <li>Storytelling</li>
-        <li>Graphic Design</li>
-        <li>Digital Marketing</li>
-    </ul>
+                // Currently Exploring
+                const exploringHeading = [...content.querySelectorAll('h2')]
+                    .find(h2 => h2.textContent.trim() === 'Currently Exploring');
 
-    <h2>Currently Exploring</h2>
+                if (exploringHeading) {
+                    const exploringList = exploringHeading.nextElementSibling;
 
-    <ul class="skills-list">
-        <li>UI/UX Design</li>
-        <li>Data Analysis</li>
-    </ul>
+                    if (exploringList && exploringList.tagName === 'UL') {
+                        exploringList.classList.add('skills-list');
+                    }
+                }
 
-    <h2>My Projects</h2>
+                // My Projects
+                const projectsHeading = [...content.querySelectorAll('h2')]
+                    .find(h2 => h2.textContent.trim() === 'My Projects');
 
-    <div class="project-list">
+                if (projectsHeading) {
+                    const projectsList = projectsHeading.nextElementSibling;
 
-        <a href="campaigns.html" class="project-card">
-             Campaigns
-        </a>
+                    if (projectsList && projectsList.tagName === 'UL') {
+                        projectsList.classList.add('project-list');
 
-        <a href="scripts.html" class="project-card">
-             Scripts
-        </a>
+                        projectsList.querySelectorAll('a')
+                            .forEach(link => {
+                                link.classList.add('project-card');
+                            });
+                    }
+                }
 
-        <a href="creative-ideas.html" class="project-card">
-             Creative Ideas
-        </a>
-
-    </div>
-
-</main>
-```
+            })
+            .catch(error => {
+                document.getElementById('readme-content').innerHTML =
+                    '<p>Could not load README.</p>';
+            });
+    </script>
 
 </body>
+
 </html>
