@@ -17,15 +17,17 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* =========================
+   HOME PAGE
+========================= */
+
 #readme-content {
     max-width: 1200px;
     margin: auto;
     padding: 60px 40px 100px;
 }
 
-/* HERO */
-
-h1 {
+#readme-content h1 {
     font-size: clamp(65px, 12vw, 150px);
     line-height: 0.85;
     letter-spacing: -8px;
@@ -34,23 +36,19 @@ h1 {
     font-weight: 900;
 }
 
-h1 + p {
+#readme-content h1 + p {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 80px;
 }
 
-/* TEXT */
-
-p {
+#readme-content p {
     max-width: 750px;
     font-size: 18px;
     line-height: 1.7;
 }
 
-/* SECTIONS */
-
-h2 {
+#readme-content h2 {
     margin-top: 110px;
     margin-bottom: 35px;
     font-size: 55px;
@@ -58,35 +56,22 @@ h2 {
     text-transform: uppercase;
 }
 
-h3 {
-    font-size: 28px;
-    margin: 0;
-}
-
-/* LINKS */
-
-a {
+#readme-content a {
     color: var(--black);
     font-weight: bold;
     text-decoration: none;
 }
 
-a:hover {
+#readme-content a:hover {
     background: var(--lime);
 }
 
-/* MY PROJECTS */
-
-h2:has(+ h3) {
-    margin-bottom: 40px;
-}
-
-/* PROJECT CARDS */
+/* HOME PROJECT CARDS */
 
 .project-card {
     display: block;
     background: var(--purple);
-    color: white;
+    color: white !important;
     padding: 30px;
     margin: 20px 0;
     font-size: 28px;
@@ -95,44 +80,87 @@ h2:has(+ h3) {
 }
 
 .project-card:hover {
+    background: var(--purple) !important;
+    color: white !important;
+    transform: translateY(-8px);
+    box-shadow: 10px 10px 0 var(--black);
+}
+
+/* =========================
+   CAMPAIGNS PAGE
+========================= */
+
+.campaigns-page {
+    padding: 60px 40px 100px;
+}
+
+.campaigns-page h1 {
+    font-size: clamp(65px, 12vw, 150px);
+    line-height: 0.85;
+    letter-spacing: -8px;
+    max-width: 1000px;
+    margin: 30px 0 25px;
+    font-weight: 900;
+}
+
+.campaigns-page h1 + p {
+    max-width: 750px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 80px;
+}
+
+.campaigns-page h2 {
+    font-size: 45px;
+    letter-spacing: -3px;
+    margin: 50px 0 30px;
+}
+
+.campaigns-page ul {
+    list-style: none;
+    padding: 0;
+    max-width: 900px;
+}
+
+.campaigns-page li {
+    margin: 20px 0;
+}
+
+.campaigns-page li a {
+    display: block;
+    background: var(--purple);
+    color: white;
+    padding: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campaigns-page li a:hover {
     background: var(--purple);
     color: white;
     transform: translateY(-8px);
     box-shadow: 10px 10px 0 var(--black);
 }
 
-/* HORIZONTAL LINE */
-
-hr {
-    border: none;
-    border-top: 3px solid var(--black);
-    margin: 70px 0;
-}
-
-/* CREATIVE LABEL */
-
-body::before {
-    content: "IDEAS / WORDS / ADS";
-    position: fixed;
-    top: 20px;
-    right: 30px;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-/* DECORATION */
-
-body::after {
-    content: "✦";
-    position: fixed;
-    bottom: 30px;
-    right: 40px;
-    font-size: 60px;
+.campaigns-page > a {
+    display: inline-block;
+    margin-top: 70px;
     color: var(--purple);
+    font-weight: bold;
+    border-bottom: 3px solid var(--purple);
+    padding-bottom: 5px;
 }
 
-/* CAMPAIGN PAGE */
+.campaigns-page > a:hover {
+    background: transparent;
+    transform: translateX(-8px);
+}
+
+/* =========================
+   CAMPAIGN CONTENT PAGE
+========================= */
 
 #content {
     max-width: 1200px;
@@ -144,19 +172,70 @@ body::after {
     font-size: clamp(60px, 10vw, 130px);
     line-height: 0.85;
     letter-spacing: -6px;
-    margin: 30px 0 40px;
+    max-width: 1000px;
+    margin: 30px 0 80px;
+    font-weight: 900;
 }
+
+/* SECTION TITLES */
 
 #content h2 {
+    font-size: 42px;
+    letter-spacing: -2px;
     margin-top: 80px;
-    font-size: 45px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
 }
 
+/* TEXT */
+
 #content p {
-    max-width: 750px;
+    max-width: 800px;
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.8;
+    margin-bottom: 25px;
 }
+
+/* BIG IDEA */
+
+#content h3 {
+    display: inline-block;
+    background: var(--purple);
+    color: white;
+    padding: 20px 30px;
+    font-size: 32px;
+    margin: 10px 0 30px;
+}
+
+/* SCRIPT */
+
+#content h2:nth-of-type(5) {
+    background: var(--black);
+    color: white;
+    padding: 25px 30px;
+}
+
+#content h2:nth-of-type(5) + p {
+    background: white;
+    padding: 30px;
+    max-width: 900px;
+    font-size: 20px;
+    line-height: 2;
+}
+
+/* MY ROLE */
+
+#content h2:last-of-type {
+    margin-top: 100px;
+}
+
+#content h2:last-of-type + p {
+    background: var(--lime);
+    padding: 25px 30px;
+    font-weight: bold;
+}
+
+/* IMAGES */
 
 #content img {
     max-width: 100%;
@@ -164,6 +243,8 @@ body::after {
     display: block;
     margin: 40px 0;
 }
+
+/* LINKS */
 
 #content a {
     color: var(--purple);
@@ -174,107 +255,60 @@ body::after {
 #content a:hover {
     background: var(--lime);
 }
-/* CAMPAIGNS PAGE */
 
-body:has(h1:first-child) {
-    background: var(--cream);
-}
+/* =========================
+   GLOBAL DECORATION
+========================= */
 
-/* PAGE CONTAINER */
-
-body:has(h1:first-child) {
-    padding: 60px 40px 100px;
-}
-
-/* PAGE TITLE */
-
-body:has(h1:first-child) h1 {
-    max-width: 1000px;
-    font-size: clamp(65px, 12vw, 150px);
-    line-height: 0.85;
-    letter-spacing: -8px;
-    margin: 30px 0 25px;
-}
-
-/* INTRO */
-
-body:has(h1:first-child) h1 + p {
-    max-width: 750px;
-    font-size: 24px;
+body::before {
+    content: "IDEAS / WORDS / ADS";
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 12px;
     font-weight: bold;
-    line-height: 1.5;
-    margin-bottom: 80px;
+    letter-spacing: 2px;
 }
 
-/* FOLDER TITLE */
-
-body:has(h1:first-child) h2 {
-    font-size: 45px;
-    letter-spacing: -3px;
-    margin: 50px 0 30px;
-}
-
-/* CAMPAIGN LINKS */
-
-body:has(h1:first-child) ul {
-    list-style: none;
-    padding: 0;
-    max-width: 900px;
-}
-
-body:has(h1:first-child) li {
-    margin: 20px 0;
-}
-
-body:has(h1:first-child) li a {
-    display: block;
-    background: var(--purple);
-    color: white;
-    padding: 30px;
-    font-size: 28px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-body:has(h1:first-child) li a:hover {
-    background: var(--purple);
-    color: white;
-    transform: translateY(-8px);
-    box-shadow: 10px 10px 0 var(--black);
-}
-
-/* BACK TO HOME */
-
-body:has(h1:first-child) > a {
-    display: inline-block;
-    margin-top: 70px;
+body::after {
+    content: "✦";
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    font-size: 60px;
     color: var(--purple);
-    font-weight: bold;
-    border-bottom: 3px solid var(--purple);
-    padding-bottom: 5px;
 }
 
-body:has(h1:first-child) > a:hover {
-    background: transparent;
-    transform: translateX(-8px);
-}
-
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
-    body:has(h1:first-child) {
+    #readme-content,
+    .campaigns-page,
+    #content {
         padding: 40px 20px 80px;
     }
 
-    body:has(h1:first-child) h1 {
+    #readme-content h1,
+    .campaigns-page h1,
+    #content h1 {
         font-size: 65px;
         letter-spacing: -4px;
     }
 
-    body:has(h1:first-child) li a {
+    .campaigns-page li a {
         font-size: 22px;
         padding: 24px;
     }
 
-}
+    #content h2 {
+        font-size: 32px;
+    }
 
+    #content p {
+        font-size: 16px;
+    }
+
+}
