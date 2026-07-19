@@ -133,14 +133,15 @@ body {
 }
 
 /* =========================
-   CAMPAIGNS PAGE
+   CAMPAIGNS / SCRIPTS /
+   CREATIVE IDEAS PAGES
 ========================= */
 
-.campaigns-page {
+.project-page {
     padding: 60px 40px 100px;
 }
 
-.campaigns-page h1 {
+.project-page h1 {
     font-size: clamp(65px, 12vw, 150px);
     line-height: 0.85;
     letter-spacing: -8px;
@@ -149,7 +150,7 @@ body {
     font-weight: 900;
 }
 
-.campaigns-page h1 + p {
+.project-page h1 + p {
     max-width: 750px;
     font-size: 24px;
     font-weight: bold;
@@ -157,23 +158,23 @@ body {
     margin-bottom: 80px;
 }
 
-.campaigns-page h2 {
+.project-page h2 {
     font-size: 45px;
     letter-spacing: -3px;
     margin: 50px 0 30px;
 }
 
-.campaigns-page ul {
+.project-page ul {
     list-style: none;
     padding: 0;
     max-width: 900px;
 }
 
-.campaigns-page li {
+.project-page li {
     margin: 20px 0;
 }
 
-.campaigns-page li a {
+.project-page li a {
     display: block;
     background: var(--purple);
     color: white;
@@ -187,14 +188,14 @@ body {
         box-shadow 0.3s ease;
 }
 
-.campaigns-page li a:hover {
+.project-page li a:hover {
     background: var(--purple);
     color: white;
     transform: translateY(-8px);
     box-shadow: 10px 10px 0 var(--black);
 }
 
-.campaigns-page > a {
+.project-page > a {
     display: inline-block;
     margin-top: 70px;
     color: var(--purple);
@@ -203,13 +204,14 @@ body {
     padding-bottom: 5px;
 }
 
-.campaigns-page > a:hover {
+.project-page > a:hover {
     background: transparent;
     transform: translateX(-8px);
 }
 
 /* =========================
-   CAMPAIGN DETAILS PAGE
+   CAMPAIGN / SCRIPT /
+   CREATIVE IDEA DETAILS
 ========================= */
 
 #content {
@@ -275,20 +277,20 @@ body {
 @media (max-width: 600px) {
 
     #readme-content,
-    .campaigns-page,
+    .project-page,
     #content {
         padding: 40px 20px 80px;
     }
 
     #readme-content h1,
-    .campaigns-page h1,
+    .project-page h1,
     #content h1 {
         font-size: 65px;
         letter-spacing: -4px;
     }
 
     .project-card,
-    .campaigns-page li a {
+    .project-page li a {
         font-size: 22px;
         padding: 24px;
     }
