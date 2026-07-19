@@ -27,11 +27,15 @@
 
                 content.innerHTML = marked.parse(markdown);
 
-                // Skills
+                /* =========================
+                   SKILLS
+                ========================= */
+
                 const skillsHeading = [...content.querySelectorAll('h2')]
                     .find(h2 => h2.textContent.trim() === 'Skills');
 
                 if (skillsHeading) {
+
                     const skillsList = skillsHeading.nextElementSibling;
 
                     if (skillsList && skillsList.tagName === 'UL') {
@@ -39,11 +43,15 @@
                     }
                 }
 
-                // Currently Exploring
+                /* =========================
+                   CURRENTLY EXPLORING
+                ========================= */
+
                 const exploringHeading = [...content.querySelectorAll('h2')]
                     .find(h2 => h2.textContent.trim() === 'Currently Exploring');
 
                 if (exploringHeading) {
+
                     const exploringList = exploringHeading.nextElementSibling;
 
                     if (exploringList && exploringList.tagName === 'UL') {
@@ -51,27 +59,35 @@
                     }
                 }
 
-                // My Projects
+                /* =========================
+                   MY PROJECTS
+                ========================= */
+
                 const projectsHeading = [...content.querySelectorAll('h2')]
                     .find(h2 => h2.textContent.trim() === 'My Projects');
 
                 if (projectsHeading) {
-                    const projectsList = projectsHeading.nextElementSibling;
 
-                    if (projectsList && projectsList.tagName === 'UL') {
-                        projectsList.classList.add('project-list');
+                    let current = projectsHeading.nextElementSibling;
 
-                        projectsList.querySelectorAll('a')
-                            .forEach(link => {
-                                link.classList.add('project-card');
-                            });
+                    while (current) {
+
+                        if (current.tagName === 'H3') {
+
+                            current.classList.add('project-card');
+
+                        }
+
+                        current = current.nextElementSibling;
                     }
                 }
 
             })
             .catch(error => {
+
                 document.getElementById('readme-content').innerHTML =
                     '<p>Could not load README.</p>';
+
             });
     </script>
 
