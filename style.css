@@ -174,3 +174,107 @@ body::after {
 #content a:hover {
     background: var(--lime);
 }
+/* CAMPAIGNS PAGE */
+
+body:has(h1:first-child) {
+    background: var(--cream);
+}
+
+/* PAGE CONTAINER */
+
+body:has(h1:first-child) {
+    padding: 60px 40px 100px;
+}
+
+/* PAGE TITLE */
+
+body:has(h1:first-child) h1 {
+    max-width: 1000px;
+    font-size: clamp(65px, 12vw, 150px);
+    line-height: 0.85;
+    letter-spacing: -8px;
+    margin: 30px 0 25px;
+}
+
+/* INTRO */
+
+body:has(h1:first-child) h1 + p {
+    max-width: 750px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 80px;
+}
+
+/* FOLDER TITLE */
+
+body:has(h1:first-child) h2 {
+    font-size: 45px;
+    letter-spacing: -3px;
+    margin: 50px 0 30px;
+}
+
+/* CAMPAIGN LINKS */
+
+body:has(h1:first-child) ul {
+    list-style: none;
+    padding: 0;
+    max-width: 900px;
+}
+
+body:has(h1:first-child) li {
+    margin: 20px 0;
+}
+
+body:has(h1:first-child) li a {
+    display: block;
+    background: var(--purple);
+    color: white;
+    padding: 30px;
+    font-size: 28px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body:has(h1:first-child) li a:hover {
+    background: var(--purple);
+    color: white;
+    transform: translateY(-8px);
+    box-shadow: 10px 10px 0 var(--black);
+}
+
+/* BACK TO HOME */
+
+body:has(h1:first-child) > a {
+    display: inline-block;
+    margin-top: 70px;
+    color: var(--purple);
+    font-weight: bold;
+    border-bottom: 3px solid var(--purple);
+    padding-bottom: 5px;
+}
+
+body:has(h1:first-child) > a:hover {
+    background: transparent;
+    transform: translateX(-8px);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body:has(h1:first-child) {
+        padding: 40px 20px 80px;
+    }
+
+    body:has(h1:first-child) h1 {
+        font-size: 65px;
+        letter-spacing: -4px;
+    }
+
+    body:has(h1:first-child) li a {
+        font-size: 22px;
+        padding: 24px;
+    }
+
+}
+
