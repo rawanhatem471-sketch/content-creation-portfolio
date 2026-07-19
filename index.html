@@ -1,182 +1,247 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Rawan Hatem | Content Creator</title>
+```
+<title>Rawan Hatem | Content Creator</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+```
+
 </head>
 
 <body class="home-page">
 
-    <main id="readme-content">
-        Loading...
-    </main>
+```
+<main id="readme-content">
+    Loading...
+</main>
 
-    <script>
+<script>
 
-        fetch('README.md')
+    fetch('./README.md')
 
-            .then(response => response.text())
+        .then(response => {
 
-            .then(markdown => {
+            if (!response.ok) {
+                throw new Error('README.md not found');
+            }
 
-                const content = document.getElementById('readme-content');
+            return response.text();
 
-                content.innerHTML = marked.parse(markdown);
+        })
+
+        .then(markdown => {
+
+            const content =
+                document.getElementById('readme-content');
+
+            content.innerHTML =
+                marked.parse(markdown);
 
 
-                /* =========================
-                   SKILLS
-                ========================= */
+            /* =========================
+               SKILLS
+            ========================= */
 
-                const skillsHeading = [...content.querySelectorAll('h2')]
-                    .find(h2 => h2.textContent.trim() === 'Skills');
+            const skillsHeading =
+                [...content.querySelectorAll('h2')]
+                    .find(h2 =>
+                        h2.textContent.trim() === 'Skills'
+                    );
 
-                if (skillsHeading) {
+            if (skillsHeading) {
 
-                    const skillsList = skillsHeading.nextElementSibling;
+                const skillsList =
+                    skillsHeading.nextElementSibling;
 
-                    if (skillsList && skillsList.tagName === 'UL') {
-                        skillsList.classList.add('skills-list');
+                if (
+                    skillsList &&
+                    skillsList.tagName === 'UL'
+                ) {
+
+                    skillsList.classList.add(
+                        'skills-list'
+                    );
+                }
+            }
+
+
+            /* =========================
+               CURRENTLY EXPLORING
+            ========================= */
+
+            const exploringHeading =
+                [...content.querySelectorAll('h2')]
+                    .find(h2 =>
+                        h2.textContent.trim() ===
+                        'Currently Exploring'
+                    );
+
+            if (exploringHeading) {
+
+                const exploringList =
+                    exploringHeading.nextElementSibling;
+
+                if (
+                    exploringList &&
+                    exploringList.tagName === 'UL'
+                ) {
+
+                    exploringList.classList.add(
+                        'skills-list'
+                    );
+                }
+            }
+
+
+            /* =========================
+               MY PROJECTS
+            ========================= */
+
+            const projectsHeading =
+                [...content.querySelectorAll('h2')]
+                    .find(h2 =>
+                        h2.textContent.trim() ===
+                        'My Projects'
+                    );
+
+            if (projectsHeading) {
+
+                const projectList =
+                    document.createElement('div');
+
+                projectList.className =
+                    'project-list';
+
+                let current =
+                    projectsHeading.nextElementSibling;
+
+
+                while (current) {
+
+                    const next =
+                        current.nextElementSibling;
+
+
+                    if (current.tagName === 'H3') {
+
+                        const projectName =
+                            current.textContent.trim();
+
+                        const description =
+                            current.nextElementSibling;
+
+
+                        const card =
+                            document.createElement('a');
+
+                        card.className =
+                            'project-card';
+
+
+                        if (
+                            projectName ===
+                            'Campaigns'
+                        ) {
+
+                            card.href =
+                                'campaigns.html';
+                        }
+
+                        else if (
+                            projectName ===
+                            'Scripts'
+                        ) {
+
+                            card.href =
+                                'scripts.html';
+                        }
+
+                        else if (
+                            projectName ===
+                            'Creative_Ideas'
+                        ) {
+
+                            card.href =
+                                'creative-ideas.html';
+                        }
+
+
+                        const title =
+                            document.createElement('span');
+
+                        title.textContent =
+                            projectName;
+
+
+                        card.appendChild(title);
+
+
+                        if (
+                            description &&
+                            description.tagName === 'P'
+                        ) {
+
+                            const descriptionText =
+                                document.createElement('p');
+
+                            descriptionText.textContent =
+                                description.textContent;
+
+                            card.appendChild(
+                                descriptionText
+                            );
+                        }
+
+
+                        projectList.appendChild(card);
+
+
+                        current.remove();
+
+
+                        if (
+                            description &&
+                            description.tagName === 'P'
+                        ) {
+
+                            description.remove();
+                        }
                     }
+
+
+                    current = next;
                 }
 
 
-                /* =========================
-                   CURRENTLY EXPLORING
-                ========================= */
-
-                const exploringHeading = [...content.querySelectorAll('h2')]
-                    .find(h2 => h2.textContent.trim() === 'Currently Exploring');
-
-                if (exploringHeading) {
-
-                    const exploringList = exploringHeading.nextElementSibling;
-
-                    if (exploringList && exploringList.tagName === 'UL') {
-                        exploringList.classList.add('skills-list');
-                    }
-                }
-
-
-             /* =========================
-   MY PROJECTS
-========================= */
-
-const projectsHeading = [...content.querySelectorAll('h2')]
-    .find(h2 => h2.textContent.trim() === 'My Projects');
-
-if (projectsHeading) {
-
-    const projectList = document.createElement('div');
-
-    projectList.className = 'project-list';
-
-    let current = projectsHeading.nextElementSibling;
-
-
-    while (current) {
-
-        const next = current.nextElementSibling;
-
-
-        if (current.tagName === 'H3') {
-
-            const projectName =
-                current.textContent.trim();
-
-            const description =
-                current.nextElementSibling;
-
-
-            const card =
-                document.createElement('a');
-
-            card.className =
-                'project-card';
-
-
-            if (projectName === 'Campaigns') {
-                card.href = 'campaigns.html';
-            }
-
-            else if (projectName === 'Scripts') {
-                card.href = 'scripts.html';
-            }
-
-            else if (projectName === 'Creative_Ideas') {
-                card.href = 'creative-ideas.html';
-            }
-
-
-            const title =
-                document.createElement('span');
-
-            title.textContent =
-                projectName;
-
-
-            card.appendChild(title);
-
-
-            if (
-                description &&
-                description.tagName === 'P'
-            ) {
-
-                const descriptionText =
-                    document.createElement('p');
-
-                descriptionText.textContent =
-                    description.textContent;
-
-                card.appendChild(
-                    descriptionText
+                projectsHeading.after(
+                    projectList
                 );
             }
 
+        })
 
-            projectList.appendChild(card);
+        .catch(error => {
 
+            console.error(error);
 
-            /* حذف المحتوى الأصلي */
+            document.getElementById(
+                'readme-content'
+            ).innerHTML =
 
-            current.remove();
+                '<p>Could not load README.</p>';
 
-            if (
-                description &&
-                description.tagName === 'P'
-            ) {
-                description.remove();
-            }
-        }
+        });
 
-
-        current = next;
-    }
-
-
-    projectsHeading.after(projectList);
-}  
-                }
-
-            })
-
-
-            .catch(error => {
-
-                document.getElementById('readme-content').innerHTML =
-                    '<p>Could not load README.</p>';
-
-            });
-
-    </script>
+</script>
+```
 
 </body>
 
